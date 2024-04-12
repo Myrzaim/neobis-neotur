@@ -1,5 +1,5 @@
 import React from "react";
-import "./Main.css";
+import "./main.css";
 import frame from "../../images/main-img.svg";
 
 const Main = () => {

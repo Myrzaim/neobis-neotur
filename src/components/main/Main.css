@@ -1,7 +1,6 @@
 .header{
     width: 100%;
     background-image:  linear-gradient(180deg, #D0CBFF 0%, rgba(208, 203, 255, 0.00) 100%);
-
 }
 .header__container{
     font-family: 'Satoshi', sans-serif;
@@ -10,6 +9,7 @@
     margin-left: 4rem;
     margin-right: 4rem;
     align-items: center;
+   margin-bottom: 6rem;
 }
 
 
