@@ -12,7 +12,7 @@ const Main = () => {
             Enjoy your winter vacations with warmth and amazing sightseeing on
             the mountains. Enjoy the best experience with us!
           </p>
-
+<a href="#foo">
           <button className="header__btn">
             Let's go!
             <svg
@@ -27,7 +27,8 @@ const Main = () => {
                 fill="white"
               />
             </svg>
-          </button>
+            </button>
+            </a>
         </div>
         <div className="header__img">
           <img src={frame} alt="header-img" />
