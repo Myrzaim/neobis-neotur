@@ -1,12 +1,12 @@
 import React from "react";
-import "./recommendedCard.css";
+import styles from './styles.module.scss';
 import mountain from "../../images/mountain.jpg";
 
 const RecommendedCard = () => {
   return (
-    <div className="recommendedCard" id="foo">
-      <img className="recommendedCard__img" src={mountain} alt="mountain" />
-      <p className="recommendedCard__title">Nouthern Mountain</p>
+    <div className={styles.card} >
+          <img className={styles.card__img } src={mountain} alt="mountain" />
+      <p className={styles.card__title} >Nouthern Mountain</p>
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
-import "./main.css";
+import styles from "./header.module.scss";
 import frame from "../../images/main-img.svg";
 
-const Main = () => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header__container">
@@ -38,4 +38,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Header;
