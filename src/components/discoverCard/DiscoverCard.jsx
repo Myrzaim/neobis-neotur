@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./discoverCard.module.scss";
-import mountain from "../../images/mountain.jpg";
+import mountain from "../../assets/images/mountain.jpg";
 
 const DiscoverCard = () => {
   return (

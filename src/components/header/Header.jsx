@@ -1,19 +1,19 @@
 import React from "react";
 import styles from "./header.module.scss";
-import frame from "../../images/main-img.svg";
+import frame from "../../assets/images/main-img.svg";
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="header__container">
-        <div className="header__desc">
-          <h1 className="header__title">Winter Vacation Trips</h1>
-          <p className="header__description">
+    <header className={styles.header}>
+      <div className={styles.header__container}>
+        <div className={styles.header__desc}>
+          <h1 className={styles.header__title}>Winter Vacation Trips</h1>
+          <p className={styles.header__description}>
             Enjoy your winter vacations with warmth and amazing sightseeing on
             the mountains. Enjoy the best experience with us!
           </p>
-<a href="#foo">
-          <button className="header__btn">
+
+          <button className={styles.header__btn}>
             Let's go!
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,10 +27,9 @@ const Header = () => {
                 fill="white"
               />
             </svg>
-            </button>
-            </a>
+          </button>
         </div>
-        <div className="header__img">
+        <div className={styles.header__img}>
           <img src={frame} alt="header-img" />
         </div>
       </div>

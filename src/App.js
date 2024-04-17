@@ -1,14 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Discover from "./components/discover/Discover";
-import Main from "./components/main/Header";
-import Recommended from "./components/recommended/Recommended";
+import Detail from "./components/Detail/Detail";
+import Main from "./components/main/Main";
 
 function App() {
   return (
     <div className="App">
-      <Main />
-      <Discover />
-      <Recommended />
+      <Routes>
+        {/* <Route path="/" element={<Main />} /> */}
+        <Route path = "/" element = {<Detail/>}/>
+      </Routes>
     </div>
   );
 }
