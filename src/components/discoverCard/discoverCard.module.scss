@@ -1,0 +1,24 @@
+.card{
+ position: relative;
+}
+.card__img{
+    border-radius: 2rem;
+    width: 22rem;
+    height: 18rem;
+
+}
+.card__title{
+    background-color:  rgba(70%, 63%, 63%, 0.5);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 1rem;
+    width: 20rem;
+    height: 2.3rem;
+  color: white;
+    font-size: 28px;
+    font-weight: 600;
+    position: absolute;
+    top: 12rem;
+    left: 0rem;
+    z-index: 1;
+}
