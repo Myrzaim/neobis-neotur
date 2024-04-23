@@ -20,16 +20,20 @@ justify-content: space-between;
 .category{
     // display: flex;
     // justify-content: space-between;
-    font-family: 'SF Pro Display', sans-serif !important;
-    font-size: 24px !important;
-    // list-style: none;
-    font-weight: 600 !important;
+   
+    
     // width: 60%;
   
+}
+.css-w8dmq8{
+    font-family: 'SF Pro Display', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
 }
 .discover__card{
     display: flex;
     justify-content: space-between;
+  
 }
 .category__item >a{
     text-decoration: none;

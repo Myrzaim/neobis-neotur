@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: 'Satoshi', sans-serif;
@@ -8,4 +11,32 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+.PhoneInputInput{
+  border: none;
+}
+.css-13xfq8m-MuiTabPanel-root{
+  padding: 0 !important;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  font-family: 'SF Pro Display', sans-serif!important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+}
+:root {
+  --swiper-theme-color:#6A62B7!important;
+;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+  color: #6A62B7!important;
+}
+.css-1aquho2-MuiTabs-indicator {
+  left: 0!important;
+  width: 0!important;
+}
+.css-heg063-MuiTabs-flexContainer {
+  margin-bottom: 1rem!important;
 }
