@@ -1,13 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
-import mountain from "../../assets/images/mountain.jpg";
+
 
 const RecommendedCard = ({ item }) => {
   return (
+    <Link to={`/detail/${item.id}`}>
     <div className={styles.card}>
       <img className={styles.card__img} src={item.imagePath} alt="mountain" />
       <p className={styles.card__title}>{item.name}</p>
-    </div>
+      </div>
+    </Link>
   );
 };
 

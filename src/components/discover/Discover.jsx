@@ -79,9 +79,9 @@ const Discover = () => {
             >
               {getTours
                 ? getTours.map((item) => (
-                    <SwiperSlide>
-                      <DiscoverCard key={item.id} item={item} />
-                    </SwiperSlide>
+                      <SwiperSlide>
+                        <DiscoverCard key={item.id} item={item} />
+                      </SwiperSlide>
                   ))
                 : null}
             </Swiper>

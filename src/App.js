@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path = "detail" element = {<Detail/>}/>
+        <Route path = "/detail/:id" element = {<Detail/>}/>
       </Routes>
     </div>
   );

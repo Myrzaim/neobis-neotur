@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import filterReducer from "./slices/filterSlices";
+import addReducer from "./slices/todoSlices";
 
 export const store = configureStore({
     reducer: {
-        filter: filterReducer
+        addTour: addReducer
   },
 });
 

@@ -6,19 +6,37 @@ import man from "../../assets/images/man.png";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import styles from "../modal/modalPage.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { addTour } from "../../redux/slices/todoSlices";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   bgcolor: "background.paper",
   p: 3,
 };
-const ModalPage = ({ open, handleClose }) => {
-  const [value, setValue] = useState();
-  const [valueCom, setValueCom] = useState();
+const ModalPage = ({ open, handleClose, id }) => {
+  const dispatch = useDispatch();
+  const [number, setNumber] = useState();
+  const [comment, setComment] = useState("");
   const [peopleCount, setPeopleCount] = useState(1);
   const handleBtnLeft = () =>
     peopleCount > 1 && setPeopleCount(peopleCount - 1);
   const handleBtnRight = () =>
     peopleCount < 6 && setPeopleCount(peopleCount + 1);
+
+  const navigate = useNavigate();
+  const book = useSelector((state) => console.log(state.addTour.bookTour));
+
+  const handleBook = (e) => {
+    e.preventDefault();
+    if (number.trim().length) {
+      dispatch(addTour({ id, number, comment, peopleCount }));
+      setNumber("");
+      setComment("");
+      setPeopleCount();
+      navigate("/");
+    }
+  };
 
   return (
     <div>
@@ -37,22 +55,24 @@ const ModalPage = ({ open, handleClose }) => {
             your information and select the number of people for the reservation
           </p>
 
-          <form>
+          <form onSubmit={handleBook}>
             <p>Phone Number</p>
             <PhoneInput
               className={styles.input}
               international
               countryCallingCodeEditable={false}
               defaultCountry="KG"
-              value={value}
-              onChange={setValue}
+              value={number}
+              onChange={setNumber}
             />
             <p>Commentaries to trip</p>
             <input
+              type="text"
               className={styles.input}
               placeholder="Write your wishes to trip..."
-              value={valueCom}
-              onChange={setValueCom}
+              defaultValue={comment}
+              value={comment}
+              onChange={setComment}
             />
             <p>Commentaries to trip</p>
             <div className={styles.counts}>
@@ -74,7 +94,9 @@ const ModalPage = ({ open, handleClose }) => {
               <img src={man} alt="man" />
               <h2>{peopleCount} People</h2>
             </div>
-            <button className={styles.sub_btn}>Submit</button>
+            <button type="submit" className={styles.sub_btn}>
+              Submit
+            </button>
           </form>
         </Box>
       </Modal>

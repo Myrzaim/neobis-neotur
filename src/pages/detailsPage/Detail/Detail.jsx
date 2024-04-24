@@ -1,33 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./detail.module.scss";
-import backimg from "../../../assets/images/backgr.jpg";
 import location from "../../../assets/images/location.png";
 import ReviewCard from "../../../components/reviewCard/ReviewCard";
 import ModalPage from "../../../components/modal/ModalPage";
-
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import ModalBookOk from "../../../components/modal/ModalBookOk";
+import ModalBookNo from "../../../components/modal/ModalBookNo";
 
-
+const API = "https://neotour.up.railway.app/api/products/";
 const Detail = () => {
- 
-
+  const [getTour, setGetTour] = useState([]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
- 
+  const { id } = useParams();
 
-
-
-
-
+  useEffect(() => {
+    axios.get(API + id).then((data) => setGetTour(data.data));
+  }, []);
 
   return (
     <div className={styles.detail}>
       <div className={styles.img}>
-        <img src={backimg} alt="backimg" />
+        <img src={getTour.imagePath} alt="backimg" />
       </div>
       <Link to={`/`}>
-   
         <button className={styles.back__btn}>
           <svg
             width="49"
@@ -46,27 +45,27 @@ const Detail = () => {
       </Link>
       <div className={styles.description}>
         <div className={styles.description__container}>
-          <h1 className={styles.title}>Mount Fuji</h1>
+          <h1 className={styles.title}>{getTour.name}</h1>
           <div className={styles.location}>
             <img className={styles.locationImg} src={location} alt="location" />
-            <p>Honshu, Japan</p>
+            <p>{getTour.location}</p>
           </div>
           <h3>Description</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            odio debitis maxime deserunt placeat, neque tempora eos sapiente
-            quod corrupti voluptatum quaerat dicta excepturi aspernatur laborum
-            nemo odit non sit?
-          </p>
+          <p>{getTour.description}</p>
           <h3>Rewiews</h3>
-          <ReviewCard />
-          <ReviewCard />
 
+          {getTour.reviews
+            ? getTour.reviews.map((item) => (
+                <ReviewCard key={item.id} item={item} />
+              ))
+            : null}
           <button className={styles.book_btn} onClick={handleOpen}>
             Book Now
           </button>
           <div>
-            <ModalPage handleClose={handleClose} open={open} />
+            {/* <ModalPage id={getTour.id} handleClose={handleClose} open={open} /> */}
+            {/* <ModalBookOk open={open} /> */}
+            <ModalBookNo open={open} />
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import RecommendedCard from "../recommendedCard/RecommendedCard";
 import styles from "./recommended.module.scss";
 
@@ -17,9 +16,7 @@ const Recommended = () => {
       <p className={styles.recommended__title}>Recommended</p>
       <div className={styles.recommended__list}>
         {recommend.map((item) => (
-          <Link to={`/detail`}>
             <RecommendedCard key={item.id} item={item} />
-          </Link>
         ))}
       </div>
     </div>
