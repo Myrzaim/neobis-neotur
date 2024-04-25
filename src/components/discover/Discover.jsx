@@ -15,18 +15,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useRef } from "react";
 
 const API = "https://neotour.up.railway.app/api/products/";
 const categories = ["Popular", "Featured", "Most Visited", "Europe", "Asia"];
-
 const Discover = () => {
   const [value, setValue] = useState(categories[0]);
   const [getTours, setGetTours] = useState([]);
-
   useEffect(() => {
     render("popular");
   }, []);
-
   function render(val) {
     let api = "popular";
     val = val.toLowerCase();
@@ -43,22 +41,30 @@ const Discover = () => {
       setGetTours(data.data);
     });
   }
-
   const handleChange = (event, newValue) => {
     render(newValue);
     setValue(newValue);
   };
-
+  const swiperRef = useRef(null);
+  const onSwiper = (swiper) => {
+    swiperRef.current = swiper;
+  };
+  const handlePrevBtn = () => swiperRef.current.slidePrev();
+  const handleNextBtn = () => swiperRef.current.slideNext();
   return (
     <div id="discover" className={styles.discover}>
       <div className={styles.discover__head}>
         <p>Discover</p>
         <div className={styles.arrows}>
-          <img className={styles.arrows__left} src={left} alt="left" />
-          <img src={right} alt="right" />
+          <img
+            className={styles.arrows__left}
+            src={left}
+            alt="left"
+            onClick={handlePrevBtn}
+          />
+          <img src={right} alt="right" onClick={handleNextBtn} />
         </div>
       </div>
-
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
           <Box>
@@ -68,20 +74,13 @@ const Discover = () => {
               ))}
             </TabList>
           </Box>
-
           <TabPanel value={value}>
-            <Swiper
-              modules={[Navigation, Pagination, A11y]}
-              spaceBetween={20}
-              slidesPerView={3}
-              navigation
-              pagination={{ clickable: true }}
-            >
+            <Swiper spaceBetween={16} slidesPerView={3} onSwiper={onSwiper}>
               {getTours
                 ? getTours.map((item) => (
-                      <SwiperSlide>
-                        <DiscoverCard key={item.id} item={item} />
-                      </SwiperSlide>
+                    <SwiperSlide>
+                      <DiscoverCard key={item.id} item={item} />
+                    </SwiperSlide>
                   ))
                 : null}
             </Swiper>
@@ -91,5 +90,4 @@ const Discover = () => {
     </div>
   );
 };
-
 export default Discover;

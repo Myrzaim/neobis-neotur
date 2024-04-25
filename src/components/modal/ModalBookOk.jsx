@@ -11,7 +11,7 @@ const style = {
 const ModalBookOk = ({ open }) => {
   return (
     <div>
-      <Modal
+      <Modal id={2}
         open={open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"

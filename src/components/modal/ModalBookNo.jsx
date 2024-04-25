@@ -12,6 +12,7 @@ const ModalBookNo = ({ open }) => {
   return (
     <div>
       <Modal
+        id={3}
         open={open}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"

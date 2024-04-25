@@ -5,7 +5,7 @@ import Recommended from '../../../components/recommended/Recommended'
 
 const Main = () => {
   return (
-      <div className='main'>
+      <div >
           <Header />
           <Discover />
           <Recommended />
