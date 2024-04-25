@@ -5,8 +5,8 @@ const reviewCard = ({ item }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__img}>
-        <img src={item.reviewersImagePath} alt="persomImg" />
-        <p>{item.name}</p>
+        <img src={item.reviewersImagePath}  alt="persomImg" />
+        <p>{item.reviewer}</p>
       </div>
       <p>{item.comment}</p>
     </div>

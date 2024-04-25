@@ -63,9 +63,9 @@ const Detail = () => {
             Book Now
           </button>
           <div>
-            {/* <ModalPage id={getTour.id} handleClose={handleClose} open={open} /> */}
+            <ModalPage id={getTour.id} handleClose={handleClose} open={open} />
             {/* <ModalBookOk open={open} /> */}
-            <ModalBookNo open={open} />
+            {/* <ModalBookNo open={open} /> */}
           </div>
         </div>
       </div>
