@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 import styles from "./discoverCard.module.scss";
 
 const DiscoverCard = ({ item }) => {

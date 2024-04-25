@@ -29,6 +29,7 @@
     padding: 1rem;
     border: 1px solid gray;
     border-radius: 3rem;
+    outline: none;
 }
 form>p{
     color: gray;
@@ -47,6 +48,7 @@ form>p{
         border-radius: 1.5rem;
         font-size: 30px;
         color: white;
+        cursor: pointer;
     }
 }
 .sub_btn{
@@ -58,5 +60,6 @@ form>p{
     padding: 1.1rem 2rem;
     font-size: 24px;
     font-weight: 500;
-    margin-top: 1rem;  
+    margin-top: 1rem; 
+    cursor: pointer; 
 }
