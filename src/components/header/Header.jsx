@@ -13,7 +13,7 @@ const Header = () => {
             the mountains. Enjoy the best experience with us!
           </p>
 
-          <button className={styles.header__btn}>
+          <a href="#discover" className={styles.header__btn}>
             Let's go!
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const Header = () => {
                 fill="white"
               />
             </svg>
-          </button>
+          </a>
         </div>
         <div className={styles.header__img}>
           <img src={frame} alt="header-img" />

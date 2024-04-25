@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "@mui/material";
 import styles from "./discoverCard.module.scss";
-import mountain from "../../assets/images/mountain.jpg";
 
-const DiscoverCard = () => {
+const DiscoverCard = ({ item }) => {
   return (
-    <div className={styles.card}>
-      <img className={styles.card__img} src={mountain} alt="mountain" />
-      <p className={styles.card__title}>Nouthern Mountain</p>
-    </div>
+    <Link to={`/detail/${item.id}`}>
+      <div className={styles.card}>
+        <img className={styles.card__img} src={item.imagePath} alt="mountain" />
+        <p className={styles.card__title}>{item.name}</p>
+      </div>
+    </Link>
   );
 };
 

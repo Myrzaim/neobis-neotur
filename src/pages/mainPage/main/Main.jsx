@@ -1,7 +1,7 @@
 import React from 'react'
-import Discover from '../discover/Discover'
-import Header from '../header/Header'
-import Recommended from '../recommended/Recommended'
+import Discover from '../../../components/discover/Discover'
+import Header from '../../../components/header/Header'
+import Recommended from '../../../components/recommended/Recommended'
 
 const Main = () => {
   return (
